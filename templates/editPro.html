@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Product</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    
+    <h1>Update Product Details</h1>
+
+    <form action="" method="post">
+
+        <label for="">Product Name</label>
+        <input type="text" name="pname" value="{{datas.Product_Name}}" required>
+
+        <label for="">Product Price</label>
+        <input type="text" name="pprice" value="{{datas.Product_Price}}"  required>
+
+        <label for="">Quantity</label>
+        <input type="text" name="qty" value="{{datas.Quantity}}"  required>
+
+        <label for="">Description</label>
+        <input type="text" name="desc" value="{{datas.P_Desc}}"  >
+
+        <input type="submit" value="Update">
+
+    </form>
+
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Data Management</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    
+    <h1>Product Data Management with Migration</h1>
+    <h4>
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+    </h4>
+
+    <p><a href="{{ url_for('addProduct') }}">Add Products</a></p>
+    <table>
+
+    <tr>
+        <th>ID</th>
+        <th>Product_Name</th>
+        <th>Product_Price</th>
+        <th>Quantity</th>
+        <th>P_Desc</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+
+        {% for data in datas %}
+
+        <tr>
+
+            <td>{{data.ID}}</td>
+            <td>{{data.Product_Name}}</td>
+            <td>{{data.Product_Price}}</td>
+            <td>{{data.Quantity}}</td>
+            <td>{{data.P_Desc}}</td>
+            <td><a href="{{url_for('UpdatePro', id=data.ID)}}">Edit</a></td>
+            <td><a onclick="return confirm('Are you sure to Delete?');" href="{{url_for('deletePro', id=data.ID)}}">Delete</a></td>
+
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+</body>
+</html>
